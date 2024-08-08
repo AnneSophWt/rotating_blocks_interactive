@@ -12,7 +12,7 @@ function setup() {
   for (let i=0; i<cols; i++) {
     blocks[i] = [];
     for (let j=0; j<rows; j++) {
-      block[1][j] = new Block(i*size, j*size);
+      blocks[i][j] = new Block(size/2 + i*size, size/2 + j*size);
     }
   }
 }
@@ -25,5 +25,6 @@ function draw() {
       blocks[i][j].display();
     }
   }
+    print(pmouseX, mouseX, pmouseY, mouseY);
 }
  
