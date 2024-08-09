@@ -1,5 +1,6 @@
-let distMouse = 50;
-let cols; let rows; let size = 50;
+let distMouse = 15;
+let cols; let rows; let size = 10; 
+let offset = 4;
 let blocks = [];
 
 function setup() {
@@ -18,7 +19,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(0);
   for (let i=0; i<cols; i++) {
     for (let j=0; j<rows; j++) {
       blocks[i][j].move();
