@@ -1,5 +1,6 @@
-let distMouse = 50;
-let cols; let rows; let size = 10;
+let distMouse = 15;
+let cols; let rows; let size = 10; 
+let offset = 4;
 let blocks = [];
 
 function setup() {
