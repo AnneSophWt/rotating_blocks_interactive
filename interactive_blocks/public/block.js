@@ -4,18 +4,21 @@ class Block {
          this.y = y;
         this.angle = 0;
         this.c = 70;
+        this.greenValue = 255;
     }
     display() {
        // noFill();
-        fill(0, 255, 0)
-        stroke(0, 0, 255);
+        fill(0, this.greenValue, 0)
+        //stroke(0, 0, 255);
         push();
         translate(this.x, this.y);
         rotate(this.angle);
 
         if (this.angle > 0 && this.angle < 45) {
+            stroke(0, 0, 255);
             this.drawRect();
         } else {
+            stroke(0, 0, 255);
             this.drawX();
         }
         pop();
@@ -37,11 +40,21 @@ class Block {
             if (this.angle > 0 && this.angle < 90) {
                 this.angle += 1; 
                 if (this.c > 70) {
-                    this.c -= 3;
+                    this.c -= 5;
+            }
+            if (this.angle < 45) {
+            if (this.greenValue < 100) {
+                this.greenValue -=5;
+            }
+            } else {
+                if (this.greenValue > 0) {
+                    this.greenValue -=5;
+                }
             }
         } else {
             this.angle = 0;
             this.c = 70; 
+            this.greenValue = 255;
         }
     }
 
